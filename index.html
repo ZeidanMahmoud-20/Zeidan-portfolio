@@ -1,197 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zeidan — Electronics &amp; Computer Science Portfolio</title>
-<meta name="description" content="Portfolio of Zeidan, an Electronics and Computer Science student — projects, skills, and contact.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Academy | Campus Companion Portal</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Custom Styles -->
+  <link href="style.css" rel="stylesheet" />
 </head>
 <body>
 
-<!-- Signal trace: decorative signature element, connects sections on desktop -->
-<svg class="trace" width="3" height="100%" viewBox="0 0 3 100" preserveAspectRatio="none" aria-hidden="true">
-  <line x1="1.5" y1="0" x2="1.5" y2="100" />
-</svg>
-<div class="trace-pulse" aria-hidden="true"></div>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="https://www.facebook.com/share/196P9bQ8Yk/" target="_blank">
+        <div class="fw-bold text-success border border-success rounded px-2 py-1 logo-badge">FA</div>
+        <div>
+          <span class="d-block fw-bold text-dark logo-title">Future Academy</span>
+          <small class="text-muted logo-sub">Zeidan Mahmoud</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active fw-bold text-danger" href="#courses-section">Courses</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#cafeteria-section">Cafeteria Menu</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#order-form-section">Order Food</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold text-success" href="https://www.facebook.com/share/196P9bQ8Yk/" target="_blank"><i class="bi bi-facebook"></i> Academy Page</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="#home" class="logo">
-      <span class="logo-mark">◈</span>
-      <span class="logo-text">ZEIDAN<span class="logo-sub">// ECE</span></span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="primary-nav" id="primaryNav">
-      <a href="#home" class="nav-pin" data-label="P1">Home</a>
-      <a href="#about" class="nav-pin" data-label="P2">About</a>
-      <a href="#skills" class="nav-pin" data-label="P3">Skills</a>
-      <a href="#projects" class="nav-pin" data-label="P4">Projects</a>
-      <a href="#contact" class="nav-pin nav-pin--cta" data-label="P5">Contact</a>
-    </nav>
+  <!-- COURSE REGISTRATION HERO -->
+  <header class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold text-success mb-3">University Course Registration</h1>
+      <p class="lead text-muted mb-4 mx-auto hero-desc">
+        Browse your official curriculum, review assigned faculty members, and register for your academic classes.
+      </p>
+      <a href="#courses-section" class="btn btn-danger btn-lg rounded-pill px-4 shadow-sm">Browse Courses</a>
+    </div>
+  </header>
+
+  <!-- COURSES SECTION -->
+  <main id="courses-section" class="container py-5">
+    <h2 class="mb-4 fw-bold text-center">Semester Courses</h2>
+    <div class="row g-4">
+      
+      <!-- Course 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Computer Science Fundamental</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: CS101</h6>
+            <p class="card-text text-secondary small flex-grow-1">Introduction to basic computer systems, algorithms, and logical problem solving.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Yassin</li>
+              <li><strong>Credit Hours:</strong> 3 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Computer Science Fundamental">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Object-Oriented Programming (C++)</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: CS202</h6>
+            <p class="card-text text-secondary small flex-grow-1">Classes, inheritance, polymorphism, and memory management in C++.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Mostafa Ibrahim</li>
+              <li><strong>Credit Hours:</strong> 4 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Object-Oriented Programming (C++)">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Structured Programming (Java)</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: CS102</h6>
+            <p class="card-text text-secondary small flex-grow-1">Fundamentals of structured logic, control structures, and object design in Java.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Mostafa Ibrahim</li>
+              <li><strong>Credit Hours:</strong> 3 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Structured Programming (Java)">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Physics</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: PHY101</h6>
+            <p class="card-text text-secondary small flex-grow-1">Mechanics, electromagnetism, and wave motion principles.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Dalia</li>
+              <li><strong>Credit Hours:</strong> 3 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Physics">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Electronics</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: ELC201</h6>
+            <p class="card-text text-secondary small flex-grow-1">Semiconductor devices, circuit analysis, and digital logic gates.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Dalia</li>
+              <li><strong>Credit Hours:</strong> 3 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Electronics">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Calculus</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: MTH101</h6>
+            <p class="card-text text-secondary small flex-grow-1">Limits, derivatives, integrals, and mathematical applications.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Nagwa</li>
+              <li><strong>Credit Hours:</strong> 3 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Calculus">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 7 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Discrete Mathematics</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: MTH201</h6>
+            <p class="card-text text-secondary small flex-grow-1">Set theory, logic, graph theory, and combinatorial analysis.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Amira</li>
+              <li><strong>Credit Hours:</strong> 3 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Discrete Mathematics">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 8 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Business Administration</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: BUS101</h6>
+            <p class="card-text text-secondary small flex-grow-1">Organizational structures, corporate models, and management principles.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Christine</li>
+              <li><strong>Credit Hours:</strong> 2 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Business Administration">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 9 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Human Rights</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: HUM101</h6>
+            <p class="card-text text-secondary small flex-grow-1">Civic duties, global frameworks, and foundational human rights laws.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Engy</li>
+              <li><strong>Credit Hours:</strong> 2 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Human Rights">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 10 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">English (First & Second Semester)</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: ENG101-102</h6>
+            <p class="card-text text-secondary small flex-grow-1">Technical vocabulary, professional communication, and academic composition.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Zeinab</li>
+              <li><strong>Credit Hours:</strong> 4 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="English (First & Second Semester)">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 11 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Technical Writing</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Code: ENG201</h6>
+            <p class="card-text text-secondary small flex-grow-1">Drafting technical reports, documentation, and professional emails.</p>
+            <ul class="list-unstyled small text-muted mb-3">
+              <li><strong>Instructor:</strong> Dr. Fatma</li>
+              <li><strong>Credit Hours:</strong> 2 Hours</li>
+            </ul>
+            <button class="btn btn-outline-danger w-100 mt-auto btn-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-coursename="Technical Writing">Register</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CAFETERIA HERO -->
+  <header id="cafeteria-section" class="hero-cafeteria text-center mt-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold mb-3">University Cafeteria Menu</h1>
+      <p class="lead mb-4 mx-auto hero-desc">
+        Fuel your study sessions with fresh meals, snacks, and artisan drinks ordered right to your schedule.
+      </p>
+      <a href="#menu-items" class="btn btn-success btn-lg rounded-pill px-4 shadow-sm">View Menu</a>
+    </div>
+  </header>
+
+  <!-- CAFETERIA MENU ITEMS SECTION -->
+  <section id="menu-items" class="container py-5">
+    
+    <!-- Breakfast Category -->
+    <h3 class="fw-bold text-success mb-3 border-bottom pb-2">Breakfast</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <span class="position-absolute top-0 end-0 badge bg-danger m-2">Popular</span>
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Eggs Sandwich">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Eggs Sandwich</h5>
+            <p class="card-text text-muted small flex-grow-1">Freshly toasted bread with scrambled eggs, herbs, and mild spice.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">35 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">New</span>
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Cheese Croissant">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Cheese Croissant</h5>
+            <p class="card-text text-muted small flex-grow-1">Flaky, butter-rich pastry filled with melted gourmet cheese.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">30 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Pancakes">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Pancakes</h5>
+            <p class="card-text text-muted small flex-grow-1">Fluffy golden stacks served with sweet maple syrup and butter.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">45 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lunch Category -->
+    <h3 class="fw-bold text-success mb-3 border-bottom pb-2">Lunch</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <span class="position-absolute top-0 end-0 badge bg-danger m-2">Popular</span>
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Chicken Burger">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Chicken Burger</h5>
+            <p class="card-text text-muted small flex-grow-1">Crispy fried chicken breast, lettuce, special sauce in a soft bun.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">70 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Pasta">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Pasta</h5>
+            <p class="card-text text-muted small flex-grow-1">Penne pasta tossed in rich white cream sauce and herbs.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">60 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <span class="position-absolute top-0 end-0 badge bg-success m-2">Offer</span>
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Chicken Sandwich">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Chicken Sandwich</h5>
+            <p class="card-text text-muted small flex-grow-1">Grilled chicken strips with mayonnaise, lettuce, and pickles.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">55 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drinks Category -->
+    <h3 class="fw-bold text-success mb-3 border-bottom pb-2">Drinks</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <span class="position-absolute top-0 end-0 badge bg-danger m-2">Popular</span>
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Coffee">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Coffee</h5>
+            <p class="card-text text-muted small flex-grow-1">Freshly brewed rich espresso or classic robust roast coffee.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">25 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Fresh Juice">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Fresh Juice</h5>
+            <p class="card-text text-muted small flex-grow-1">100% natural pressed fruit juice (Orange or Mango).</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">40 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Soft Drink">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">Soft Drink</h5>
+            <p class="card-text text-muted small flex-grow-1">Chilled carbonated beverage options.</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="fw-bold text-success">20 EGP</span>
+              <a href="#order-form-section" class="btn btn-sm btn-dark">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cafeteria Order Form -->
+    <div id="order-form-section" class="row justify-content-center mt-5">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow border-0 p-4">
+          <h3 class="fw-bold mb-3 text-center text-success">Place Cafeteria Order</h3>
+          <form id="cafeteriaForm">
+            
+            <div class="mb-3">
+              <label for="studentName" class="form-label fw-bold">Student Name</label>
+              <input type="text" class="form-control" id="studentName" value="Zeidan Mahmoud" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="studentId" class="form-label fw-bold">Student ID / Email</label>
+              <input type="text" class="form-control" id="studentId" value="zeidanmahmoud123@gmail.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="selectItem" class="form-label fw-bold">Select Item</label>
+              <select class="form-select" id="selectItem" required>
+                <option value="" selected disabled>Choose menu item...</option>
+                <optgroup label="Breakfast">
+                  <option value="Eggs Sandwich">Eggs Sandwich - 35 EGP</option>
+                  <option value="Cheese Croissant">Cheese Croissant - 30 EGP</option>
+                  <option value="Pancakes">Pancakes - 45 EGP</option>
+                </optgroup>
+                <optgroup label="Lunch">
+                  <option value="Chicken Burger">Chicken Burger - 70 EGP</option>
+                  <option value="Pasta">Pasta - 60 EGP</option>
+                  <option value="Chicken Sandwich">Chicken Sandwich - 55 EGP</option>
+                </optgroup>
+                <optgroup label="Drinks">
+                  <option value="Coffee">Coffee - 25 EGP</option>
+                  <option value="Fresh Juice">Fresh Juice - 40 EGP</option>
+                  <option value="Soft Drink">Soft Drink - 20 EGP</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="quantity" class="form-label fw-bold">Quantity</label>
+              <input type="number" class="form-control" id="quantity" min="1" value="1" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="specialRequest" class="form-label fw-bold">Special Request</label>
+              <textarea class="form-control" id="specialRequest" rows="2" placeholder="Any special preparation or notes..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 fw-bold py-2">Place Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- REGISTRATION MODAL -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold">Confirm Course Registration</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>You are registering for: <strong id="modalCourseName" class="text-danger"></strong></p>
+          <p class="small text-muted">Student Name: Zeidan Mahmoud<br>Account: zeidanmahmoud123@gmail.com</p>
+          <div class="alert alert-success py-2 small mb-0">Your request will be submitted to the Future Academy registry.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger btn-sm" id="confirmEnrollmentBtn">Confirm Enrollment</button>
+        </div>
+      </div>
+    </div>
   </div>
-</header>
 
-<main>
-
-  <!-- ============ HOME / HERO ============ -->
-  <section id="home" class="panel panel--navy hero">
-    <div class="section-inner hero-inner">
-      <p class="eyebrow">SIG_00 // ONLINE</p>
-      <h1 class="hero-title">Building things at the edge of <span class="accent">hardware</span> and <span class="accent-alt">code</span>.</h1>
-      <p class="hero-sub">Hi, I'm Zeidan — an Electronics and Computer Science student. I design circuits, write software, and enjoy the moment a schematic turns into something that actually runs.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn--primary">View Projects</a>
-        <a href="#contact" class="btn btn--ghost">Get in Touch</a>
-      </div>
-      <div class="scope" aria-hidden="true">
-        <svg viewBox="0 0 400 80" class="scope-wave">
-          <polyline points="0,40 30,40 45,10 60,70 75,20 90,55 105,40 400,40" />
-        </svg>
-      </div>
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-white border-top py-4 mt-5 text-center">
+    <div class="container text-muted small">
+      <p class="mb-1">
+        Future Academy Campus Companion | Student: <strong>Zeidan Mahmoud</strong> | 
+        <a href="https://www.facebook.com/share/196P9bQ8Yk/" target="_blank" class="text-success fw-bold text-decoration-none">
+          <i class="bi bi-facebook"></i> Future Academy Official Page
+        </a>
+      </p>
+      <p class="mb-1">Email: <a href="mailto:zeidanmahmoud123@gmail.com">zeidanmahmoud123@gmail.com</a></p>
+      <p class="mb-0">College Contact Numbers: 01122608560 | 01003623041 | 01274066668</p>
     </div>
-  </section>
+  </footer>
 
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="panel panel--light about">
-    <div class="section-inner about-inner">
-      <p class="eyebrow eyebrow--dark">SIG_01 // ABOUT</p>
-      <div class="about-grid">
-        <div class="component-card" aria-hidden="true">
-          <div class="component-card__pins component-card__pins--top"></div>
-          <div class="component-card__body">
-            <span class="component-card__label">U0</span>
-            <span class="component-card__sub">ZEIDAN</span>
-          </div>
-          <div class="component-card__pins component-card__pins--bottom"></div>
-        </div>
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>I'm currently studying Electronics and Computer Science, working across coursework in circuit design and semiconductor devices, discrete mathematics and logic, and C++ programming. I like problems that sit between the two worlds — things like translating a Boolean expression into a real logic circuit, or figuring out why a rectifier isn't behaving the way the datasheet promised.</p>
-          <p>Outside of coursework, I'm curious about almost everything technical: mathematics, embedded systems, and the history of how our tools came to be. This site is itself a small project — built by hand with HTML, CSS, and JavaScript, and hosted on GitHub Pages.</p>
-          <p class="about-note">Replace this paragraph with your own story — your year, university, and what you're most proud of building so far.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section id="skills" class="panel panel--board skills">
-    <div class="section-inner">
-      <p class="eyebrow">SIG_02 // SKILLS</p>
-      <h2 class="panel-title panel-title--light">What I work with</h2>
-
-      <div class="skills-group">
-        <h3 class="skills-group__title">Software</h3>
-        <ul class="chip-row">
-          <li class="chip">C++</li>
-          <li class="chip">HTML / CSS</li>
-          <li class="chip">JavaScript</li>
-          <li class="chip">Git &amp; GitHub</li>
-        </ul>
-      </div>
-
-      <div class="skills-group">
-        <h3 class="skills-group__title">Electronics</h3>
-        <ul class="chip-row">
-          <li class="chip">Circuit Analysis</li>
-          <li class="chip">Rectifiers &amp; Semiconductor Devices</li>
-          <li class="chip">Thévenin / Norton Theorems</li>
-        </ul>
-      </div>
-
-      <div class="skills-group">
-        <h3 class="skills-group__title">Logic &amp; Math</h3>
-        <ul class="chip-row">
-          <li class="chip">Boolean Algebra</li>
-          <li class="chip">Digital Logic Design</li>
-          <li class="chip">Discrete Mathematics</li>
-        </ul>
-      </div>
-      <p class="skills-note">Swap these chips for your own tools and confidence levels — add or remove as your skill set grows.</p>
-    </div>
-  </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section id="projects" class="panel panel--light projects">
-    <div class="section-inner">
-      <p class="eyebrow eyebrow--dark">SIG_03 // PROJECTS</p>
-      <h2 class="panel-title">Selected work</h2>
-      <p class="section-note">Sample projects below — replace with your own, including real links to live demos or repositories.</p>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <span class="project-card__ref">U1</span>
-          <h3>Digital Logic Simulator</h3>
-          <p>A small tool for simplifying Boolean expressions and generating truth tables — built while working through discrete mathematics coursework.</p>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live demo →</a>
-            <a href="#" class="text-link">Source →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-card__ref">U2</span>
-          <h3>Rectifier Circuit Analyzer</h3>
-          <p>A guided walkthrough and calculator for AC/DC rectifier circuits — half-wave, full-wave, and bridge configurations with worked values.</p>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live demo →</a>
-            <a href="#" class="text-link">Source →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-card__ref">U3</span>
-          <h3>This Portfolio Site</h3>
-          <p>The site you're looking at — semantic HTML, hand-written CSS with a circuit-board visual language, and vanilla JS form validation.</p>
-          <div class="project-card__links">
-            <a href="#" class="text-link">Live demo →</a>
-            <a href="#" class="text-link">Source →</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="panel panel--navy contact">
-    <div class="section-inner contact-inner">
-      <p class="eyebrow">SIG_04 // CONTACT</p>
-      <h2 class="panel-title panel-title--light">Let's talk</h2>
-      <p class="hero-sub">Have a project, a question, or a job opportunity? Send a message below.</p>
-
-      <form id="contactForm" class="contact-form" novalidate>
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
-          <span class="field-error" id="nameError" role="alert"></span>
-        </div>
-
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-          <span class="field-error" id="emailError" role="alert"></span>
-        </div>
-
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-          <span class="field-error" id="messageError" role="alert"></span>
-        </div>
-
-        <button type="submit" class="btn btn--primary">Send Message</button>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="section-inner footer-inner">
-    <p>&copy; <span id="year"></span> Zeidan. Built with HTML, CSS &amp; JavaScript.</p>
-    <div class="footer-links">
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
