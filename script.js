@@ -1,106 +1,66 @@
-// ===================================================================
-// ZEIDAN — PORTFOLIO SCRIPT
-// Handles: mobile nav toggle, footer year, and contact form validation.
-// ===================================================================
-
-document.addEventListener("DOMContentLoaded", () => {
-  setFooterYear();
-  setupNavToggle();
-  setupContactForm();
-});
-
-/* ---------- Footer year ---------- */
-function setFooterYear() {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+/* Color Palette */
+:root {
+  --academy-red: #d9232e;
+  --academy-green: #087544;
+  --academy-dark: #173d2d;
+  --academy-cream: #f7f2e9;
 }
 
-/* ---------- Mobile nav toggle ---------- */
-function setupNavToggle() {
-  const toggle = document.getElementById("navToggle");
-  const nav = document.getElementById("primaryNav");
-  if (!toggle || !nav) return;
-
-  toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  // Close the menu after a link is tapped (mobile UX)
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
+/* Global Styles */
+body {
+  background: var(--academy-cream);
+  color: var(--academy-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* ---------- Contact form validation ---------- */
-function setupContactForm() {
-  const form = document.getElementById("contactForm");
-  if (!form) return;
-
-  const nameInput = document.getElementById("name");
-  const emailInput = document.getElementById("email");
-  const messageInput = document.getElementById("message");
-  const statusEl = document.getElementById("formStatus");
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const isNameValid = validateField(
-      nameInput,
-      (value) => value.trim().length >= 2,
-      "Please enter your name (at least 2 characters)."
-    );
-
-    const isEmailValid = validateField(
-      emailInput,
-      (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
-      "Please enter a valid email address."
-    );
-
-    const isMessageValid = validateField(
-      messageInput,
-      (value) => value.trim().length >= 10,
-      "Your message should be at least 10 characters."
-    );
-
-    if (isNameValid && isEmailValid && isMessageValid) {
-      // NOTE: This form does not send data anywhere yet.
-      // To actually deliver messages, connect it to a backend or a
-      // service like Formspree, EmailJS, or Netlify Forms, then
-      // replace this block with the real submit call.
-      statusEl.textContent = "Thanks! Your message looks good and is ready to send once this form is connected to a backend or a service like Formspree/EmailJS.";
-      form.reset();
-    } else {
-      statusEl.textContent = "";
-    }
-  });
-
-  // Re-validate a field as the user fixes it
-  [nameInput, emailInput, messageInput].forEach((input) => {
-    input.addEventListener("input", () => clearError(input));
-  });
+/* Navbar Branding */
+.logo-badge {
+  font-size: 1.1rem;
+  background: #fffdf8;
 }
 
-function validateField(input, isValid, errorMessage) {
-  const field = input.closest(".field");
-  const errorEl = document.getElementById(input.id + "Error");
-  const valid = isValid(input.value);
-
-  if (valid) {
-    clearError(input);
-  } else {
-    field.classList.add("has-error");
-    if (errorEl) errorEl.textContent = errorMessage;
-  }
-  return valid;
+.logo-title {
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
-function clearError(input) {
-  const field = input.closest(".field");
-  const errorEl = document.getElementById(input.id + "Error");
-  field.classList.remove("has-error");
-  if (errorEl) errorEl.textContent = "";
+.logo-sub {
+  font-size: 0.68rem;
+}
+
+/* Hero Sections */
+.hero-section {
+  background: linear-gradient(135deg, rgba(8, 117, 68, 0.12), rgba(217, 35, 46, 0.12));
+  padding: 70px 0;
+}
+
+.hero-cafeteria {
+  background: linear-gradient(rgba(23, 61, 45, 0.85), rgba(8, 117, 68, 0.85)), 
+              url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 0;
+}
+
+.hero-desc {
+  max-width: 650px;
+}
+
+/* Card Image Sizing */
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Button Overrides */
+.btn-danger {
+  background-color: var(--academy-red);
+  border-color: var(--academy-red);
+}
+
+.btn-danger:hover {
+  background-color: #b91e28;
+  border-color: #b91e28;
 }
